@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using PreparationForExam.Models;
 
 namespace PreparationForExam.Infrastructre;
@@ -47,7 +45,7 @@ public partial class ApbdContext : DbContext
                 .IsUnicode(false)
                 .IsFixedLength();
 
-            entity.HasOne(d => d.PatientPeselNavigation).WithMany(p => p.Admissions)
+            entity.HasOne(d => d.Patient).WithMany(p => p.Admissions)
                 .HasForeignKey(d => d.PatientPesel)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("Admissions_Patients");
@@ -93,7 +91,7 @@ public partial class ApbdContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("BedAssignments_Beds");
 
-            entity.HasOne(d => d.PatientPeselNavigation).WithMany(p => p.BedAssignments)
+            entity.HasOne(d => d.Patient).WithMany(p => p.BedAssignments)
                 .HasForeignKey(d => d.PatientPesel)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("BedAssignments_Patients");
