@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using PreparationForExam.Models;
-
 namespace PreparationForExam.DTOs;
 
 public record PatientResponse(
@@ -9,6 +6,6 @@ public record PatientResponse(
     string LastName,
     int Age,
     string Sex,
-    IEnumerable<AdmissionResponse> Admissions,
-    IEnumerable<BedAssignmentResponse> BedAssignments
+    List<AdmissionResponse> Admissions,
+    List<BedAssignmentResponse> BedAssignments
 );

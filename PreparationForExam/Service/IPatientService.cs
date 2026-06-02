@@ -1,12 +1,12 @@
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
 using PreparationForExam.DTOs;
 
 namespace PreparationForExam.Service;
 
 public interface IPatientService
 {
-    Task<IEnumerable<PatientResponse>> GetAllAsync(string? serach, CancellationToken cancellationToken);
-    // Task<int> AssignBedAsync(string pesel, CreateBedAssignment request, CancellationToken cancellationToken);
+    Task<List<PatientResponse>> GetAllAsync(CancellationToken cancellationToken);
+    Task<PatientResponse?> GetByIdAsync(int id, CancellationToken cancellationToken);
+    Task<PatientResponse> CreateAsync(BookRequest request, CancellationToken cancellationToken);
+    Task<PatientResponse?> UpdateAsync(int id, Patien request, CancellationToken cancellationToken);
+    Task<bool> DeleteAsync(int id, CancellationToken cancellationToken);
 }

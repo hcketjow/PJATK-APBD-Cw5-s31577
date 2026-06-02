@@ -1,11 +1,10 @@
-using System;
-using PreparationForExam.Models;
-
 namespace PreparationForExam.DTOs;
 
 public record BedAssignmentResponse(
     int Id,
+    string PatientPesel,
     DateTime From,
     DateTime? To,
-    BedResponse Bed
+    BedResponse Bed,
+    PatientResponse Patient
 );
