@@ -5,6 +5,5 @@ public record BedAssignmentResponse(
     string PatientPesel,
     DateTime From,
     DateTime? To,
-    BedResponse Bed,
-    PatientResponse Patient
+    BedResponse Bed
 );
