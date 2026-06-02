@@ -1,3 +1,4 @@
+using System;
 using PreparationForExam.Models;
 
 namespace PreparationForExam.DTOs;
@@ -8,4 +9,3 @@ public record BedAssignmentResponse(
     DateTime? To,
     BedResponse Bed
 );
-

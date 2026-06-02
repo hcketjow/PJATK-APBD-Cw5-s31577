@@ -1,3 +1,5 @@
+using System.Threading;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PreparationForExam.DTOs;
 using PreparationForExam.Exceptions;
@@ -14,17 +16,17 @@ public class PatientsController(IPatientService service) : ControllerBase {
         return Ok(await service.GetAllAsync(search, cancellationToken));
     }
 
-    [HttpPost("{pesel}/bedassignments")]
-    public async Task<IActionResult> AssignBed(string pesel, [FromBody] CreateBedAssignment request, CancellationToken cancellationToken)
-    {
-        try
-        {
-            var id = await service.AssignBedAsync(pesel, request, cancellationToken);
-            return Created($"/api/patients/{pesel}/bedassignments/{id}", new { id });
-        }
-        catch (NotFoundException e)
-        {
-            return NotFound(e.Message);
-        }
-    }
+    // [HttpPost("{pesel}/bedassignments")]
+    // public async Task<IActionResult> AssignBed(string pesel, [FromBody] CreateBedAssignment request, CancellationToken cancellationToken)
+    // {
+    //     try
+    //     {
+    //         var id = await service.AssignBedAsync(pesel, request, cancellationToken);
+    //         return Created($"/api/patients/{pesel}/bedassignments/{id}", new { id });
+    //     }
+    //     catch (NotFoundException e)
+    //     {
+    //         return NotFound(e.Message);
+    //     }
+    // }
 }

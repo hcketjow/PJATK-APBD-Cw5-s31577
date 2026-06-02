@@ -1,4 +1,8 @@
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using PreparationForExam.Infrastructre;
 using PreparationForExam.Service;
 
@@ -10,6 +14,7 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddScoped<IPatientService, PatientService>();
+builder.Services.AddScoped<IBedService, BedService>();
 
 builder.Services.AddDbContext<ApbdContext>(opt =>
 {

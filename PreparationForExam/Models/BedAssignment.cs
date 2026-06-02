@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace PreparationForExam.Models;
 
-namespace PreparationForExam.Models;
-
-public partial class BedAssignment
+public class BedAssignment
 {
     public int Id { get; set; }
 
@@ -17,5 +14,5 @@ public partial class BedAssignment
 
     public virtual Bed Bed { get; set; } = null!;
 
-    public virtual Patient PatientPeselNavigation { get; set; } = null!;
+    public virtual Patient Patient { get; set; } = null!;
 }

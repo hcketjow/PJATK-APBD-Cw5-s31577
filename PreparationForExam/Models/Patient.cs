@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace PreparationForExam.Models;
 
-namespace PreparationForExam.Models;
-
-public partial class Patient
+public class Patient
 {
     public string Pesel { get; set; } = null!;
 

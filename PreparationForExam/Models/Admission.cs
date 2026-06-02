@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace PreparationForExam.Models;
 
-namespace PreparationForExam.Models;
-
-public partial class Admission
+public class Admission
 {
     public int Id { get; set; }
 
@@ -15,7 +12,7 @@ public partial class Admission
 
     public int WardId { get; set; }
 
-    public virtual Patient PatientPeselNavigation { get; set; } = null!;
+    public virtual Patient Patient { get; set; } = null!;
 
     public virtual Ward Ward { get; set; } = null!;
 }

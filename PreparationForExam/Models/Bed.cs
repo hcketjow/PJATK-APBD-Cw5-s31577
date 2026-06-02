@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿namespace PreparationForExam.Models;
 
-namespace PreparationForExam.Models;
-
-public partial class Bed
+public class Bed
 {
     public int Id { get; set; }
 
-    public string RoomId { get; set; } = null!;
+    public int RoomId { get; set; }
 
     public int BedTypeId { get; set; }
 
